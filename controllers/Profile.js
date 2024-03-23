@@ -125,10 +125,9 @@ exports.updateDisplayPicture  = async (req,res) =>{
     res.status(500).json({
       success:false,
       message:error.message,
-      // message: "profile not update display"
+      message: "profile not update display"
     })
   }
-
 }
 
 exports.getEnrolledCourse =  async (req,res) =>{
