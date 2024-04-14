@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
   courses:[ { type: mongoose.Schema.Types.ObjectId, ref: "Course"} ,],
   active: {  type:Boolean,default: true},
   approved: { type: Boolean, default: true},
-  additionalDetails:{type: mongoose.Schema.Types.ObjectId,required: true,ref: "Profile"},
+  // additionalDetails:{type: mongoose.Schema.Types.ObjectId,required: true,ref: "Profile"},
   image: {  type: String, required: true },
   token: {  type: String  },
   resetPasswordExpires: {type : Date},

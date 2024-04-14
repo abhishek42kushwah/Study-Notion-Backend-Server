@@ -37,8 +37,8 @@ router.post("/createCourse",auth, isInstructor,isAdmin, createCourse);
 router.get('/getAllCourses', getAllCourse)
 router.post('/getCourseDetails', getCourseDetails)
 // category routes -
-router.post("/createCategory",auth,isAdmin,createCategory) 
-router.get("/showAllCategory" , auth , isAdmin , showAllCategory )
+router.post("/createCategory",auth,isAdmin,isInstructor,createCategory) 
+router.get("/showAllCategory" ,showAllCategory )
 router.post("/getCategoryPageDetails" , auth , isAdmin , categoryPageDetails)
 // section route-
 router.post("/addSection" , auth , isAdmin ,isInstructor, createSection)

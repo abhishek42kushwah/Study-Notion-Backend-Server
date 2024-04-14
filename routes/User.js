@@ -1,5 +1,5 @@
 const express =require("express");
-const router =express.Router()
+const router = express.Router();
 
 
 const {login,signup,sendOTP,changePassword} = require("../controllers/Auth");
@@ -13,7 +13,7 @@ const {resetPasswordToken,resetPassword} = require("../controllers/ResetPassword
 router.post("/login",login);
 router.post("/signUp",signup);
 router.post("/sendOTP",sendOTP);
-router.post("/changePassword",auth,changePassword)
+router.post("/changePassword",auth,changePassword);
 
 
 

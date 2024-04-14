@@ -132,22 +132,30 @@ exports.updateDisplayPicture  = async (req,res) =>{
 
 exports.getEnrolledCourse =  async (req,res) =>{
   try {
-    const userId =res.user.id;
+    const userId = req.user.id;
+    console.log("id :",userId);
     const userDetails = await User.findOne({
       _id: userId
-    }).populate("course")
+    }).populate("courses")
     .exec()
-
+   
     if(!userDetails){
       return res.status(400).json({
         success:false,
         message:error.message,
+        message: `Could not find user with id: ${userDetails}`,
       })
     }
+    return res.status(200).json({
+      success: true,
+      data: userDetails.courses,
+    })
 
   } catch (error) {
+    console.log("error here" ,error);
     return res.status(500).json({
       success:false,
+      
       message:error.message,
     })
   }
