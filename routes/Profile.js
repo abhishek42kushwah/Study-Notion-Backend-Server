@@ -11,7 +11,6 @@ const {
 const { auth } =require("../middilewares/auth");
 
 // delete user acc 
-
 router.delete("/deleteProfileUser", auth , deleteAccount);
 //get all users details
 

@@ -33,10 +33,10 @@ const {createRating,
     const { auth,isStudent,isInstructor,isAdmin}= require("../middilewares/auth");
 
 // course routes -
-router.post("/createCourse",auth, isInstructor,isAdmin, createCourse);
+router.post("/createCourse",createCourse);
 router.get('/getAllCourses', getAllCourse)
 router.post('/getCourseDetails', getCourseDetails)
-// category routes -
+// category routes -`
 router.post("/createCategory",auth,isAdmin,isInstructor,createCategory) 
 router.get("/showAllCategory" ,showAllCategory )
 router.post("/getCategoryPageDetails" , auth , isAdmin , categoryPageDetails)
