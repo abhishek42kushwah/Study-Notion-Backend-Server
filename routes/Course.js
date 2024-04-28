@@ -6,7 +6,12 @@ const router = express.Router();
 //course controllers import 
 const {createCourse
     ,getAllCourse,
-    getCourseDetails} = require("../controllers/Course");
+    getCourseDetails,
+    getFullCourseDetails,
+    editCourse,
+    getInstructorCourses,
+    deleteCourse,
+} = require("../controllers/Course");
 
     //Category controllers import 
 const {createCategory
@@ -36,6 +41,17 @@ const {createRating,
 router.post("/createCourse",createCourse);
 router.get('/getAllCourses', getAllCourse)
 router.post('/getCourseDetails', getCourseDetails)
+// Get Details for a Specific Courses
+router.post("/getFullCourseDetails", auth, getFullCourseDetails)
+// Edit Course routes
+router.post("/editCourse", auth, isInstructor, editCourse)
+// Get all Courses Under a Specific Instructor
+router.get("/getInstructorCourses", auth, isInstructor, getInstructorCourses)
+// Delete a Course
+router.delete("/deleteCourse", deleteCourse)
+
+// ========================================================================================
+
 // category routes -`
 router.post("/createCategory",auth,isAdmin,isInstructor,createCategory) 
 router.get("/showAllCategory" ,showAllCategory )
