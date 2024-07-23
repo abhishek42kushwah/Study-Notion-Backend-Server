@@ -11,7 +11,8 @@ exports.connect  = () =>{
       .catch((error)=> {
         console.log(error)
       console.log("DB Connection me problem hai",error);
-      console.error("error aa rha de kho kha h ",process.exit(1) 
+      console.error("error aa rha de kho kha h ",
+        process.exit(1) 
       );
       console.log(error);
       process.exit(1) 
