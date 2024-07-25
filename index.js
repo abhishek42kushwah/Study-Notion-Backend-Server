@@ -5,7 +5,6 @@ const profileRouter =require("./routes/Profile");
 const paymentRouter =require("./routes/Payments");
 const courseRouter =require("./routes/Course");
 const contactUsRoute = require("./routes/ContactUs");
-const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {cloudinaryConnect} =require("./config/cloudinary");
@@ -17,6 +16,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4000;
 
 // connection mongoose 
+const database = require("./config/database");
 database.connect();
 
 // middleware
